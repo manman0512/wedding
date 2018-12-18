@@ -1,13 +1,31 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class="app-container">
+<view class="slider">
+    <swiper  autoplay="{{autoplay}}" indicator-dots="{{indicatorDots}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+    <swiper-item wx:for="{{imglist}}" wx:key="{{key}}">
+        <image src="{{item.img_url}}" lazy-load mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="index-nav">
+    <view class="nav-item" wx:for="{{navlist}}" wx:key="{{index}}">
+        <image src="{{item.icon_url}}" lazy-load mode="aspectFill"></image>
+        <text>{{item.title}}</text>
+    </view>
+</view>  
+
+<view class="recommend">
+   <view class="line"></view>
+   <view class="title">商家推荐</view>
+   <view class="line"></view>
+    
+</view>
+<scroll-view scroll-x="true">
+    <view class="uploadWrap" scroll-x="true">
+        <view wx:for="{{imglist}}" wx:key="{{index}}" class="recom-item">
+            <image src="{{item.img_url}}" lazy-load mode="aspectFill" data-id="item.lid" bindtap='changeMainImgfn2'></image>
+            <text>123</text>
+        </view>
+    </view>
+</scroll-view>
 </view>

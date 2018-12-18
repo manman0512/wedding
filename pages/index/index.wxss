@@ -1,21 +1,95 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/*轮播*/
+.slider,.slider swiper,.slider image{
+    height:360rpx;
+    width:100%;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+/**中间图标**/
+.index-nav{
+    display:flex;
+    flex-wrap: wrap;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.index-nav .nav-item{
+    width:20%;
+    height:150rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#333;
+    font-size:12px;
 }
+.index-nav .nav-item image{
+    width:100rpx;
+    height:100rpx;
+}
+.divider{
+    height:30rpx;
+    background-color:#f1f1f1;
+}
+/**商家推荐**/
+/* .scroll-x{
+    height:80px;
+    white-space: norwrap;
+    display: flex;
+}
+::-webkit-scrollbar{
+    width:0;
+    height:0;
+    background:transparent;
+}
+.view-parent{
+    display: inline-block;
+}
+.recom-item{
+    width:50px;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:12px;
+    color:#222;
+    background:#222;
+    margin:10px;
 
-.usermotto {
-  margin-top: 200px;
+} */
+/****/
+.recommend{
+    width:100%;
+    height:80rpx;
+    text-align: center;
+    margin:10px;
+    margin-bottom:0px;
+}
+.recommend .line,.recommend .title{
+    display: inline-block;
+    font-size:18px;
+    color:#333;
+}
+.recommend .line{
+    width:120rpx;
+    border-top:1px solid #ddd;
+    vertical-align: 5px;
+    margin:0 10px;
+}
+.uploadWrap{
+    height:160rpx; 
+    width:100%; 
+    display: flex;
+    display: -webkit-box; 
+     flex-direction: column; 
+     /* white-space: nowrap; */
+} 
+.recom-item{
+     width: 360rpx;
+     height: 160rpx;
+     flex: 1;
+     margin:5px;
+} 
+
+.recom-item image{ 
+    width:360rpx;
+    height:180rpx;
+}
+.recom-item text{
+    color:#000;
 }

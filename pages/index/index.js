@@ -1,54 +1,86 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    imglist:[
+        { lid: 1, img_url: 'http://127.0.0.1:3002/img/banner1.jpg' },
+        { lid: 2, img_url: 'http://127.0.0.1:3002/img/banner2.jpg' },
+        { lid: 3, img_url: 'http://127.0.0.1:3002/img/banner3.jpg' },
+        { lid: 4, img_url: 'http://127.0.0.1:3002/img/banner4.jpg' }
+    ],
+    indicatorDots:true,
+    autoplay:true,
+    beforeColor:"#2f2d2d99",
+    afterColor:"#fff",
+    navlist: [
+        { lid: 1, icon_url: 'http://127.0.0.1:3002/icons/cehua.png',title:"婚礼策划"},
+        { lid: 2, icon_url: 'http://127.0.0.1:3002/icons/hunsha.png',title:"婚纱摄影" },
+        { lid: 3, icon_url: 'http://127.0.0.1:3002/icons/lifu.png',title:"婚纱礼服"},
+        { lid: 4, icon_url: 'http://127.0.0.1:3002/icons/shoushi.png',title:"婚礼首饰" },
+        { lid: 5, icon_url: 'http://127.0.0.1:3002/icons/hunyanjiudian.png',title:"婚宴酒店" },
+        { lid: 6, icon_url: 'http://127.0.0.1:3002/icons/jiu.png',title:"婚宴用酒" },
+        { lid: 7, icon_url: 'http://127.0.0.1:3002/icons/hunlisiyi.png',title:"婚礼司仪" },
+        { lid: 8, icon_url: 'http://127.0.0.1:3002/icons/hunliyongpin.png',title:"婚礼用品" },
+        { lid: 9, icon_url: 'http://127.0.0.1:3002/icons/huayi.png',title:"花艺甜品" },
+        { lid: 10, icon_url: 'http://127.0.0.1:3002/icons/gengduo.png',title:"更多分类" },
+    ],
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    
   }
 })

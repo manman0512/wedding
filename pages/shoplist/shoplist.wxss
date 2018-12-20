@@ -1,0 +1,54 @@
+/* pages/shoplist/shoplist.wxss */
+/*商品列表**/
+.shoplist{
+    border-top:1px solid #eee;
+}
+/*左侧导航*/
+.shoplist .left-nav{
+    font-size:14px;
+    width:30%;
+    background:#eee;
+    text-align: center;
+    position:fixed;
+}
+.shoplist .left-nav .title{
+    padding:30rpx 10rpx;
+    position:relative;
+}
+.shoplist .left-nav .title.active{
+    background:#fff;
+}
+.shoplist .left-nav .tip{
+    width:18rpx;
+    height:40rpx;
+    background:red;
+    position:absolute;
+    top:30rpx;
+    left:0;
+}
+/**右侧商品*/
+.shoplist .right-content{
+    width:70%;
+    margin-left:30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shoplist .right-content .shop-item{
+    width:85%;
+    border:1px solid #ddd;
+    padding:15rpx;
+    box-shadow: 0px 0px 3px #ddd;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    margin:20rpx 0;
+}
+.shoplist .right-content .shop-item .item-img{
+    width:160rpx;
+    height:160rpx;
+}
+.shoplist .right-content .shop-item .item-title{
+    font-size:14px;
+}

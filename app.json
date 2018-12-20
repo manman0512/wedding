@@ -1,12 +1,42 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "婚礼纪",
-    "navigationBarTextStyle":"black"
-  }
+    "pages": [
+        "pages/shoplist/shoplist",
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/profile/profile"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#FFAEBD",
+        "navigationBarTitleText": "婚礼纪",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "/pages/static/home.png",
+                "selectedIconPath": "/pages/static/home-active.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "商家入驻",
+                "iconPath": "/pages/static/contact.png",
+                "selectedIconPath": "/pages/static/contact-active.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "消息",
+                "iconPath": "/pages/static/message.png",
+                "selectedIconPath": "/pages/static/message-active.png"
+            },
+            {
+                "pagePath": "pages/profile/profile",
+                "text": "我的",
+                "iconPath": "/pages/static/profile.png",
+                "selectedIconPath": "/pages/static/profile-active.png"
+            }
+        ]
+    }
 }

@@ -1,31 +1,52 @@
 <!--index.wxml-->
 <view class="app-container">
-<view class="slider">
-    <swiper  autoplay="{{autoplay}}" indicator-dots="{{indicatorDots}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
-    <swiper-item wx:for="{{imglist}}" wx:key="{{key}}">
-        <image src="{{item.img_url}}" lazy-load mode="aspectFill"></image>
-    </swiper-item>
-  </swiper>
-</view>
-<view class="index-nav">
-    <view class="nav-item" wx:for="{{navlist}}" wx:key="{{index}}">
-        <image src="{{item.icon_url}}" lazy-load mode="aspectFill"></image>
-        <text>{{item.title}}</text>
+    <!--轮播  -->
+    <view class="slider">
+        <swiper  autoplay="{{autoplay}}" indicator-dots="{{indicatorDots}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+        <swiper-item wx:for="{{bannerlist}}" wx:key="{{key}}">
+            <image src="{{item.img_url}}" lazy-load mode="aspectFill"></image>
+        </swiper-item>
+    </swiper>
     </view>
-</view>  
-
-<view class="recommend">
-   <view class="line"></view>
-   <view class="title">商家推荐</view>
-   <view class="line"></view>
-    
-</view>
-<scroll-view scroll-x="true">
-    <view class="uploadWrap" scroll-x="true">
-        <view wx:for="{{imglist}}" wx:key="{{index}}" class="recom-item">
-            <image src="{{item.img_url}}" lazy-load mode="aspectFill" data-id="item.lid" bindtap='changeMainImgfn2'></image>
-            <text>123</text>
+    <!--中间图标  -->
+    <view class="index-nav">
+        <view class="nav-item" wx:for="{{iconlist}}" wx:key="{{index}}">
+            <image src="{{item.icon_url}}" lazy-load mode="aspectFill"></image>
+            <text>{{item.title}}</text>
+        </view>
+    </view>  
+    <view class="cut-off"></view>
+    <!--商家推荐  -->
+    <view class="recommend">
+        <view class="line"></view>
+        <view class="title">商家推荐</view>
+        <view class="line"></view>
+    </view>
+    <scroll-view scroll-x="true">
+        <view class="uploadWrap" scroll-x="true">
+            <view wx:for="{{recomlist}}" wx:key="{{index}}" class="recom-item">
+                <image src="{{item.recom_url}}" lazy-load mode="aspectFill" data-id="item.lid"></image>
+                <view>{{item.title}}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="cut-off"></view>
+    <!--人气店铺  -->
+    <view class="good-shop">
+        <view>人气好店</view>
+    </view>
+    <view class="shop" wx:for="{{shoplist}}" wx:key="index">
+        <image src="{{item.img_url}}" class="shop-img" data-id="{{item.id}}"></image>
+        <view class="shop-info">
+            <text class="shop-title">店铺名称：{{item.name}}</text>
+            <text class="shop-tel">电话：{{item.tel}}</text>
+            <text class="shop-add">地址：{{item.addr}}</text>
+            <text class="shop-time">营业时间：{{item.mtime}}</text>
+        </view>
+        <view class="shop-start">
+            <view class="beforestart">★★★★★</view>
+            <view class="afterstart" style="width:{{item.star}}%;">★★★★★</view>
         </view>
     </view>
-</scroll-view>
+    
 </view>

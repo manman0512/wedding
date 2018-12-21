@@ -1,4 +1,12 @@
-Page({
+Page({    
+    handle1(e){
+        console.log(e.target.dataset.fid);
+        var fid =e.target.dataset.fid;
+        var title=e.target.dataset.title;
+        wx.reLaunch({
+            url: '/pages/shoplist/shoplist?fid='+fid+"&title="+title,
+        })
+    },
     imgload(){
         wx.request({
             url: 'http://127.0.0.1:3002/indexImages',

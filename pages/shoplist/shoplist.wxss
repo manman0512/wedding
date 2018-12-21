@@ -1,7 +1,26 @@
 /* pages/shoplist/shoplist.wxss */
+page{
+    /* overflow: hidden; */
+    background: #fff;
+}
 /*商品列表**/
+.search{
+    position:fixed;
+    top:0rpx;
+    height:100rpx;
+    width:100%;
+    border-bottom:1px solid #ddd;
+    background: #fff;
+    z-index: 10;
+
+}
+.ipt{
+    background: #fff;
+    /* position:fixed; */
+}
 .shoplist{
-    border-top:1px solid #eee;
+     margin-top:100rpx; 
+    background: #fff;
 }
 /*左侧导航*/
 .shoplist .left-nav{
@@ -10,6 +29,7 @@
     background:#eee;
     text-align: center;
     position:fixed;
+    top:100rpx;
 }
 .shoplist .left-nav .title{
     padding:30rpx 10rpx;
@@ -26,6 +46,7 @@
     top:30rpx;
     left:0;
 }
+
 /**右侧商品*/
 .shoplist .right-content{
     width:70%;
@@ -34,21 +55,61 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position:relative;
+    background: #fff;
 }
+/*右侧标题**/
+.right-name{
+    position:fixed;  
+    width:70%;
+    height:80rpx;
+    margin-bottom:0px;
+    line-height: 80rpx;
+    top:102rpx;
+    left:30%;
+    background: #fff;
+    z-index: 10;
+    font-size:14px;
+    text-align: center;
+
+}
+.right-name .line,.right-name.title{
+    display: inline-block; 
+    font-size:14px;
+    color:#333;
+}
+.right-name  .line{
+    width:120rpx;
+    border-top:1px solid #ddd;
+    vertical-align: 5px;
+    margin:0 10px;
+}
+/**商品列表*/
+.shoplist .right-content .right-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:40rpx;
+    width:90%;
+}   
 .shoplist .right-content .shop-item{
-    width:85%;
+    width:90%;
     border:1px solid #ddd;
     padding:15rpx;
     box-shadow: 0px 0px 3px #ddd;
     display: flex;
     align-items: start;
-    justify-content: space-around;
+    justify-content: space-between;
     margin:20rpx 0;
 }
 .shoplist .right-content .shop-item .item-img{
-    width:160rpx;
-    height:160rpx;
+     width:160rpx;
+    height:160rpx; 
+
 }
 .shoplist .right-content .shop-item .item-title{
     font-size:14px;
+    width:224rpx;
 }

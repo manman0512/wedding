@@ -1,0 +1,58 @@
+<!--pages/product/product.wxml-->
+<!--轮播  -->
+<view class="slider">
+        <swiper  autoplay indicator-dots="{{indicatorDots}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+        <swiper-item >
+            <image src="http://127.0.0.1:3002/img/2233009.jpg" lazy-load mode="aspectFill"></image>
+        </swiper-item>
+        <swiper-item >
+            <image src="http://127.0.0.1:3002/img/2233009.jpg" lazy-load mode="aspectFill"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="shop-info">
+    <view class="shop-img">
+        <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg"></image>
+    </view>
+    <view class="shop-center">
+        <view class='shop-name'>许昌金黄后婚纱摄影</view>
+        <view class='shop-detail arrow' >商家介绍</view>
+        <text class='shop-visited'>100浏览</text>
+    </view>
+    <view class="shop-collect">
+        <view class="coll">关注</view>
+    </view>
+</view>
+<view class='cut-off'></view>
+<view class="shop-count">
+    <view class="manjian">
+        <image src="http://127.0.0.1:3002/img/count1.png" class="manjian-img"></image>
+    </view>
+    <view class="manjian-detail">
+        <view class="count-title">许昌金黄后摄影</view>
+        <view class="count-title">满99减10</view>
+        <view class="count-time">2018.06.07--2018-12.31</view>
+    </view>
+    <view class="lingqu">立即领取</view>
+</view>
+<view class="cut-off"></view>
+<view class="product">
+    <view class="caption">所有商品</view>
+    <view class="product-list">
+        <view class="product-item">
+            <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg"></image>
+            <text>2018全新classic系列</text>
+            <text>¥9980</text>
+        </view>
+        <view class="product-item">
+            <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg"></image>
+            <text>2018全新classic系列</text>
+            <text>¥9980</text>
+        </view>
+        <view class="product-item">
+            <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg"></image>
+            <text>2018全新classic系列</text>
+            <text>¥9980</text>
+        </view>
+    </view>
+</view>

@@ -1,2 +1,20 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="profile-header">
+    <image src="http://127.0.0.1:3002/img/SIMU/IMG_914.jpg"></image>
+    <text>小超人</text>
+</view>
+<view class="profile-body">
+    <view class="item">
+        <text class="num">2</text>
+        <text class="title">店铺收藏</text>
+    </view>
+    <view class="item">
+        <text class="num">3</text>
+        <text class="title">商品收藏</text>
+    </view>
+    <view class="item">
+        <text class="num">0</text>
+        <text class="title">优惠券</text>
+    </view>
+</view>
+<view class="cut-off"></view>

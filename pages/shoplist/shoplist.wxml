@@ -1,39 +1,44 @@
 <!--pages/shoplist/shoplist.wxml-->
 <text>pages/shoplist/shoplist.wxml</text>
-<input name=""placeholder="搜索"></input>
+<view class="search">
+    <input name=""placeholder="搜索" class="ipt"></input>
+</view>
+
 <!--商品列表  -->
 <view class="shoplist">
-    <view class="left-nav" catchtap='handle1'>
-        <view class="recommend">
-            <view class="line"></view>
-            <view class="title">{{item.name}}</view>
-            <view class="line"></view>
-        </view>
-        <view class="title  {{btnid==1?'active':''}}"data-id="1"><text class="{{btnid==1?'tip':''}}"></text>婚礼策划</view>
-        <view class="title {{btnid==2?'active':''}}"data-id="2"><text class="{{btnid==2?'tip':''}}"></text>婚纱摄影</view>
+    <view class="left-nav" catchtap='loadProduct'>
+        
+        <view wx:for="{{navlist}}" wx:key="{{index}}" class="title  {{btnid==item.fid?'active':''}}"data-id="{{item.fid}}"  data-fname="{{item.fname}}"><text class="{{btnid==item.fid?'tip':''}}"></text>{{item.fname}}</view>
+        <!-- <view class="title {{btnid==2?'active':''}}"data-id="2"><text class="{{btnid==2?'tip':''}}"></text>婚纱摄影</view>
         <view class="title {{btnid==3?'active':''}}"data-id="3"><text class="{{btnid==3?'tip':''}}"></text>婚纱礼服</view>
         <view class="title {{btnid==4?'active':''}}"data-id="4"><text class="{{btnid==4?'tip':''}}"></text>婚礼首饰</view>
         <view class="title {{btnid==5?'active':''}}"data-id="5"><text class="{{btnid==5?'tip':''}}"></text>婚宴酒店</view>
         <view class="title {{btnid==6?'active':''}}"data-id="6"><text class="{{btnid==6?'tip':''}}"></text>婚宴用酒</view>
         <view class="title {{btnid==7?'active':''}}"data-id="7"><text class="{{btnid==7?'tip':''}}"></text>婚礼司仪</view>
         <view class="title {{btnid==8?'active':''}}"data-id="8"><text class="{{btnid==8?'tip':''}}"></text>婚礼用品</view>
-       <view class="title {{btnid==9?'active':''}}"data-id="9"> <text class="{{btnid==9?'tip':''}}"></text>花艺甜品</view>
+       <view class="title {{btnid==9?'active':''}}"data-id="9"> <text class="{{btnid==9?'tip':''}}"></text>花艺甜品</view> -->
     </view>
-
-
     <view class="right-content">
-        <view class="shop-item">
+        <view class="right-name">
+            <text class="line"></text>
+            <text class="title">{{title}}</text>
+            <text class="line"></text>
+        </view>
+        <view class="right-list" catchtap='handle1'>
+            <view class="shop-item" wx:for="{{shoplist}}" wx:key="{{index}}">
+                <image src="{{item.img_url}}" class="item-img" data-pid="{{item.pid}}"></image>
+                <text class="item-title">{{item.title}}</text>
+            </view>
+        </view>
+         
+        <!-- <view class="shop-item">
             <image src="http://127.0.0.1:3002/recom/jujiaosheying.jpg" class="item-img"></image>
             <text class="item-title">xu许昌金黄后摄影</text>
         </view>
         <view class="shop-item">
             <image src="http://127.0.0.1:3002/recom/jujiaosheying.jpg" class="item-img"></image>
             <text class="item-title">xu许昌金黄后摄影</text>
-        </view>
-        <view class="shop-item">
-            <image src="http://127.0.0.1:3002/recom/jujiaosheying.jpg" class="item-img"></image>
-            <text class="item-title">xu许昌金黄后摄影</text>
-        </view>
+        </view>  -->
     </view>
 
 

@@ -1,32 +1,82 @@
 // pages/shoplist/shoplist.js
 Page({
-handle1(e){
-    // console.log(e)
-    console.log(e.target.dataset.id);
-    var id = e.target.dataset.id;
-    this.setData({
-        btnid: id,
-    })
-},
+    handle1(e){
+        var pid=e.target.dataset.pid;
+        wx.navigateTo({
+            url: '/pages/product/product?pid='+pid,
+        })
+    },
+    loadProduct:function(e){
+        var fid=e.target.dataset.id;
+        var fname=e.target.dataset.fname;
+        // console.log(fname);
+        // console.log(fid);
+        this.setData({
+            btnid: fid,
+            title:fname
+        })
+        wx.request({
+            url:"http://127.0.0.1:3002/product",
+            data:{fid},
+            success:(res)=>{
+                // console.log(res);
+                this.setData({
+                    shoplist:res.data 
+                })
+            }
+        })
+    },
   /**
    * 页面的初始数据
    */
   data: {
-    btnid:1
+    btnid:1,
+    shoplist:[],
+    navlist:[],
+    title:"婚礼策划"//右侧标题
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    //   console.log(options.fid);
+    //   console.log(options);
+      var fid=options.fid;
+      var title=options.title;
+          wx.request({
+              url: "http://127.0.0.1:3002/shoplist",
+              success: (res) => {
+                //   console.log(res.data);
+                  this.setData({
+                      shoplist: res.data.product,
+                      navlist: res.data.shoplist
+                  })
+              }
+          })
+        if(fid){
+            this.setData({
+                btnid:fid,
+                title:title
+            })
+            wx.request({
+                url: "http://127.0.0.1:3002/product",
+                data: { fid },
+                success: (res) => {
+                    // console.log(res);
+                    this.setData({
+                        shoplist: res.data
+                    })
+                }
+            })
+        }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+ 
   },
 
   /**

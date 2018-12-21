@@ -1,9 +1,10 @@
 {
     "pages": [
-        "pages/shoplist/shoplist",
         "pages/index/index",
-        "pages/logs/logs",
-        "pages/profile/profile"
+        "pages/product/product",
+        "pages/profile/profile",
+        "pages/shoplist/shoplist",
+        "pages/logs/logs"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -20,7 +21,7 @@
                 "selectedIconPath": "/pages/static/home-active.png"
             },
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "pages/shoplist/shoplist",
                 "text": "商家入驻",
                 "iconPath": "/pages/static/contact.png",
                 "selectedIconPath": "/pages/static/contact-active.png"

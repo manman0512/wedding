@@ -18,3 +18,13 @@
     </view>
 </view>
 <view class="cut-off"></view>
+<view class="profile-footer">
+    <view class="footer-item">
+        <image src="../static/contact-active.png" bindtap="handle1"></image>
+        <text>免费入驻</text>
+    </view>
+    <view class="footer-item">
+        <image src="../static/profile-active.png" bandtap="handle2"></image>
+        <text>技术支持</text>
+    </view>
+</view>

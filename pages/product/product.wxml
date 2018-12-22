@@ -16,7 +16,7 @@
     </view>
     <view class="shop-center">
         <view class='shop-name'>许昌金黄后婚纱摄影</view>
-        <view class='shop-detail arrow' >商家介绍</view>
+        <view class='shop-detail arrow' bindtap='handle1'>商家介绍</view>
         <text class='shop-visited'>100浏览</text>
     </view>
     <view class="shop-collect">
@@ -39,8 +39,8 @@
 <view class="product">
     <view class="caption">所有商品</view>
     <view class="product-list">
-        <view class="product-item">
-            <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg"></image>
+        <view class="product-item" bindtap='handle2'>
+            <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg" ></image>
             <text>2018全新classic系列</text>
             <text>¥9980</text>
         </view>

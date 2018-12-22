@@ -1,0 +1,19 @@
+<!--pages/introduct/introduct.wxml-->
+<view class="info-header">
+    <image src="http://127.0.0.1:3002/img/SIMU/IMG_914.jpg"></image>
+    <text>许昌金黄后婚纱摄影</text>
+</view>
+<view class="cut-off"></view>
+<view class="info-body">
+    <text class="arrow">地址：河南省许昌市魏都区许继大道恒达立体国际C309室</text>
+    <text class="arrow">电话:15600000000</text>
+    
+</view>
+
+<view class="cut-off"></view>
+<view class="all" bindtap="handle1">查看全部商品</view>
+<view class="cut-off"></view>
+<view class="info-footer">
+    <view class="title">商家介绍</view>
+    <view>公司成立于2002年，秉承服务第一、品质第一的服务理念，是北京最早拥有实景基地的大型婚纱影楼，十六年专注婚纱摄影，赢得了广大顾客的认可，并获得服务质量双优单位，引领全国婚纱摄影行业水准典范标杆</view>
+</view>

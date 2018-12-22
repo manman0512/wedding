@@ -1,0 +1,38 @@
+/* pages/introduct/introduct.wxss */
+page{
+    background:#f1f1f1;
+}
+.info-header,.info-body,.info-footer,.all{
+    padding:30rpx;
+    background:#fff;
+    font-size:12px;
+}
+.info-header{
+    display: flex;
+    align-items: center;
+    font-size:18px;
+}
+.info-header image{
+    margin-right:40rpx;
+}
+.all{
+    color:#3AA9F1;
+    text-align: center;
+}
+.info-header image{
+    width:100rpx;
+    height:100rpx;
+}
+.info-body .arrow:first-child{
+    border-bottom: 1px solid #ddd;
+    padding-bottom:30rpx;    
+}
+.info-body .arrow:last-child{
+     padding-top:30rpx;
+}
+.info-footer .title{
+    border-bottom: 1px  solid #ddd;
+    padding-bottom: 15rpx;
+    margin-bottom:20rpx;
+}
+/* .info-footer .title */

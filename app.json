@@ -1,6 +1,9 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/product_details/product_detail",
+        "pages/introduct/introduct",
+        "pages/message/message",
         "pages/product/product",
         "pages/profile/profile",
         "pages/shoplist/shoplist",
@@ -9,7 +12,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#FFAEBD",
-        "navigationBarTitleText": "婚礼纪",
+        "navigationBarTitleText": "梦中的婚礼",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
@@ -27,7 +30,7 @@
                 "selectedIconPath": "/pages/static/contact-active.png"
             },
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "pages/message/message",
                 "text": "消息",
                 "iconPath": "/pages/static/message.png",
                 "selectedIconPath": "/pages/static/message-active.png"

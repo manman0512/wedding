@@ -1,0 +1,38 @@
+/* pages/message/message.wxss */
+page{
+    background:#f1f1f1;
+}
+/*1.组件灰色背景*/
+.card{
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:20rpx;
+    margin:60rpx 20rpx;
+    padding:30rpx;
+    display:flex;
+    flex-direction: column;
+}
+.card .card-header{
+    border-bottom:1px solid #ddd;
+    margin-bottom:20rpx;
+    padding-bottom:20rpx;
+    font-size:18px;
+}
+.card .card-header .time{
+    padding-top:20rpx;
+    color:#666;
+    font-size:12px;
+}
+.card .card-body{
+    border-bottom: 1px solid #ddd;
+    padding:20rpx 0;
+}
+.card .card-body .detail{
+    font-size:15px;
+    padding-bottom:20rpx;
+}
+.card .card-footer{
+    font-size:14px;
+    padding:20rpx 0;
+    color:#666;
+}

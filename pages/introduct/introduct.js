@@ -1,13 +1,8 @@
-// pages/product/product.js
+// pages/introduct/introduct.js
 Page({
 handle1(){
-    wx.navigateTo({
-        url: '/pages/introduct/introduct',
-    })
-},
-handle2(){
-    wx.navigateTo({
-        url:"/pages/product_details/product_detail"
+    wx.navigateBack({
+        delta: 1,
     })
 },
   /**
@@ -48,8 +43,8 @@ handle2(){
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function () { 
+        console.log(`卸载`);
   },
 
   /**

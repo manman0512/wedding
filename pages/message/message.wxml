@@ -1,0 +1,27 @@
+<!--pages/message/message.wxml-->
+<view class="card">
+    <view class="card-header">
+        <text class="title">名爵婚礼策划</text>
+        <view class="time">2018-12-22</view>
+    </view>
+    <view class="card-body">
+        <image src="http://127.0.0.1:3002/img/BANNER/banner4.jpg"></image>
+        <text class="detail">风轻轻吹过，是大海的味道~</text>
+    </view>
+    <view class="card-footer">
+        <text class="nav arrow">查看详情</text>
+    </view>
+</view>
+<view class="card">
+    <view class="card-header">
+        <text class="title">名爵婚礼策划</text>
+        <view class="time">2018-12-22</view>
+    </view>
+    <view class="card-body">
+        <image src="http://127.0.0.1:3002/img/BANNER/banner4.jpg"></image>
+        <text class="detail">风轻轻吹过，是大海的味道~</text>
+    </view>
+    <view class="card-footer">
+        <text class="nav arrow">查看详情</text>
+    </view>
+</view>

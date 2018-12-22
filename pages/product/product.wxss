@@ -32,7 +32,7 @@ page{
     font-size:16px;
 }
 .shop-info .shop-center .shop-detail{
-    width:140rpx;
+    width:120rpx;
     height:40rpx;
     /* display: inline-block; */
     font-size: 12px;

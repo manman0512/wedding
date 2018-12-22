@@ -1,6 +1,39 @@
 // pages/profile/profile.js
 Page({
-
+    handle1() {
+        wx.showActionSheet({
+            itemList: ["139-9999-9999", "呼叫"],
+            success: (res) => {
+                if (res.tapIndex == 1) {
+                    wx.showModal({
+                        title: "呼叫",
+                        content: `139-9999-6666`,
+                        success: (res) => {
+                            console.log(res);
+                            if (res.confirm) {
+                                // wx.showToast({
+                                //     title: '暂时还不能呼叫哦~',
+                                //     icon:"none",
+                                // });
+                                wx.makePhoneCall({
+                                    phoneNumber: '13999999999',
+                                    success(res){
+                                        console.log(`拨打成功`);
+                                    },
+                                    fail(){
+                                        console.log(`拨打失败`);
+                                    }
+                                })
+                                // setTimeout(function () {
+                                //     wx.hideToast();
+                                // }, 1500)
+                            }
+                        }
+                    })
+                } 
+            }
+        })
+    },
   /**
    * 页面的初始数据
    */

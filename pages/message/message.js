@@ -1,15 +1,6 @@
-// pages/product/product.js
+// pages/message/message.js
 Page({
-handle1(){
-    wx.navigateTo({
-        url: '/pages/introduct/introduct',
-    })
-},
-handle2(){
-    wx.navigateTo({
-        url:"/pages/product_details/product_detail"
-    })
-},
+
   /**
    * 页面的初始数据
    */

@@ -1,0 +1,44 @@
+<!--pages/product_details/product_detail.wxml-->
+<!-- <text>pages/product_details/product_detail.wxml</text> -->
+<view class="content">
+    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511061183008589.jpg" class="top-img"></image>
+    <view class="detail">
+        <text>还原金牌韩剧classic经典场景</text>
+        <text>¥9980</text>
+    </view>
+    <view class="shop-info">
+        <image src="http://127.0.0.1:3002/img/SIMU/IMG_914.jpg"></image>
+        <view>
+            <view class="title">思慕婚纱</view>
+            <text calss="">100浏览</text>
+            <text class="">10商品</text>
+        </view>
+        <view class="nav" bindtap='handle1'>进入店铺</view>
+    </view>
+    <view class="intr">商品介绍</view>
+    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511061183008589.jpg"></image>
+    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511061228782499.jpg"></image>
+    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511061327221399.jpg"></image>
+    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511062437778787.jpg"></image>
+</view>
+<view class="tabnav" >
+     <view class="nav-item" bindtap='navhandle1'>
+        <image src="../static/home_24px.png"></image>
+        <text>首页</text>
+     </view>
+     <view class="nav-item" bindtap='navhandle2'>
+        <image src="../static/telephone_24px.png"></image>
+        <text>客服</text>
+     </view>
+     <view class="nav-item" bindtap='navhandle3'>
+        <image src="../static/mobileicons_24px.png"></image>
+        <text>导航</text>
+     </view>
+     <view class="nav-item" bindtap='navhandle4'>
+        <image src="../static/Heart_24px.png"></image>
+        <text>收藏</text>
+     </view>
+     <view class="nav-item">
+        <view class="yuyue ">预约到店</view>
+     </view>
+</view>

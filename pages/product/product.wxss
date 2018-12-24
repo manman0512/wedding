@@ -4,7 +4,7 @@ page{
 }
 /*轮播*/
 .slider,.slider swiper,.slider image{
-    height:300rpx;
+    height:350rpx;
     width:100%;
 }
 /*店家信息*/
@@ -117,6 +117,7 @@ page{
       width:48%;
       background: #fff;
       margin:10rpx 0;
+      text-align: center;
   }
  .product image{
      width:100%;

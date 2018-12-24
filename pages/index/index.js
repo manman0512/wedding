@@ -1,17 +1,30 @@
 Page({    
     handle1(e){
-        console.log(e.target.dataset.fid);
+        // console.log(e.target.dataset.fid);
         var fid =e.target.dataset.fid;
         var title=e.target.dataset.title;
         wx.reLaunch({
             url: '/pages/shoplist/shoplist?fid='+fid+"&title="+title,
         })
     },
+    handle2(e){
+        var sid=e.target.dataset.sid;
+        wx.navigateTo({
+            url: '/pages/product/product?sid='+sid,
+        })
+    },
+    handle3(e){
+        var sid = e.target.dataset.sid;
+        console.log(`hhhhhhhhhhhhhhhhhhhhhfj`+sid);
+        wx.navigateTo({
+            url: '/pages/product/product?sid=' + sid,
+        })
+    },
     imgload(){
         wx.request({
             url: 'http://127.0.0.1:3002/indexImages',
             success:(res)=>{
-                console.log(res);
+                // console.log(res);
                 this.setData({
                     bannerlist:res.data.banner,
                     iconlist:res.data.icon,

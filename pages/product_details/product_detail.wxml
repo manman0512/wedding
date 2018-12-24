@@ -1,25 +1,25 @@
 <!--pages/product_details/product_detail.wxml-->
 <!-- <text>pages/product_details/product_detail.wxml</text> -->
 <view class="content">
-    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511061183008589.jpg" class="top-img"></image>
+    <image src="{{product_detail[0].img_url}}" class="top-img"></image>
     <view class="detail">
-        <text>还原金牌韩剧classic经典场景</text>
-        <text>¥9980</text>
+        <text>{{product_detail[0].caption}}</text>
+        <text>{{product_detail[0].price}}</text>
     </view>
     <view class="shop-info">
-        <image src="http://127.0.0.1:3002/img/SIMU/IMG_914.jpg"></image>
+        <image src="{{product_detail[0].banner}}"></image>
         <view>
-            <view class="title">思慕婚纱</view>
+            <view class="title">{{product_detail.name}}</view>
             <text calss="">100浏览</text>
             <text class="">10商品</text>
         </view>
         <view class="nav" bindtap='handle1'>进入店铺</view>
     </view>
     <view class="intr">商品介绍</view>
-    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511061183008589.jpg"></image>
-    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511061228782499.jpg"></image>
+    <image wx:for="{{product_detail}}" src="{{item.img_url}}" wx:key="{{index}}"></image>
+    <!-- <image src="http://127.0.0.1:3002/img/hunsha5/2018090511061228782499.jpg"></image>
     <image src="http://127.0.0.1:3002/img/hunsha5/2018090511061327221399.jpg"></image>
-    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511062437778787.jpg"></image>
+    <image src="http://127.0.0.1:3002/img/hunsha5/2018090511062437778787.jpg"></image> -->
 </view>
 <view class="tabnav" >
      <view class="nav-item" bindtap='navhandle1'>

@@ -9,10 +9,10 @@
     </swiper>
     </view>
     <!--中间图标  -->
-    <view class="index-nav" catchtap='handle1'>
+    <view class="index-nav" bindtap='handle1'>
         <view class="nav-item" wx:for="{{iconlist}}" wx:key="{{index}}">
             <image src="{{item.icon_url}}" lazy-load mode="aspectFill" data-fid="{{item.lid}}" data-title="{{item.title}}"></image>
-            <text>{{item.title}}</text>
+            <text data-fid="{{item.lid}}" data-title="{{item.title}}">{{item.title}}</text>
         </view>
     </view>  
     <view class="cut-off"></view>
@@ -25,7 +25,7 @@
     <scroll-view scroll-x="true">
         <view class="uploadWrap" scroll-x="true">
             <view wx:for="{{recomlist}}" wx:key="{{index}}" class="recom-item">
-                <image src="{{item.recom_url}}" lazy-load mode="aspectFill" data-id="item.lid"></image>
+                <image src="{{item.recom_url}}" lazy-load mode="aspectFill" data-id="item.lid" bindtap='handle2' data-sid="{{item.sid}}"></image>
                 <view>{{item.title}}</view>
             </view>
         </view>
@@ -35,8 +35,8 @@
     <view class="good-shop">
         <view>人气好店</view>
     </view>
-    <view class="shop" wx:for="{{shoplist}}" wx:key="index">
-        <image src="{{item.img_url}}" class="shop-img" data-id="{{item.id}}"></image>
+    <view class="shop" wx:for="{{shoplist}}" wx:key="index" >
+        <image src="{{item.img_url}}" class="shop-img" data-id="{{item.id}}" data-sid="{{item.sid}}"bindtap='handle3'></image>
         <view class="shop-info">
             <text class="shop-title ell">店铺名称：{{item.name}}</text>
             <text class="shop-tel">电话：{{item.tel}}</text>

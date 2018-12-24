@@ -80,7 +80,7 @@
      /* white-space: nowrap; */
 } 
 .recom-item{
-     width: 360rpx;
+     width: 320rpx;
      height: 212rpx;
      flex: 1;
      margin-left:5px;
@@ -93,7 +93,7 @@
     font-size:12px;
 } 
 .recom-item image{ 
-    width:360rpx;
+    width:320rpx;
     height:180rpx;
 }
 .recom-item {

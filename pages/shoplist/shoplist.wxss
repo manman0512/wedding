@@ -113,3 +113,8 @@ page{
     font-size:14px;
     width:224rpx;
 }
+/*消息样式*/
+.message{
+    font-size:12px;
+    
+}

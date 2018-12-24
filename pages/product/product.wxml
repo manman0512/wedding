@@ -3,19 +3,19 @@
 <view class="slider">
         <swiper  autoplay indicator-dots="{{indicatorDots}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
         <swiper-item >
-            <image src="http://127.0.0.1:3002/img/2233009.jpg" lazy-load mode="aspectFill"></image>
+            <image src="{{shop_detail.img_url1}}" lazy-load mode="aspectFill"></image>
         </swiper-item>
         <swiper-item >
-            <image src="http://127.0.0.1:3002/img/2233009.jpg" lazy-load mode="aspectFill"></image>
+            <image src="{{shop_detail.img_url2}}" lazy-load mode="aspectFill"></image>
         </swiper-item>
     </swiper>
 </view>
 <view class="shop-info">
     <view class="shop-img">
-        <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg"></image>
+        <image src="{{shop_detail.banner}}"></image>
     </view>
     <view class="shop-center">
-        <view class='shop-name'>许昌金黄后婚纱摄影</view>
+        <view class='shop-name'>{{shop_detail.name}}</view>
         <view class='shop-detail arrow' bindtap='handle1'>商家介绍</view>
         <text class='shop-visited'>100浏览</text>
     </view>
@@ -29,8 +29,8 @@
         <image src="http://127.0.0.1:3002/img/count1.png" class="manjian-img"></image>
     </view>
     <view class="manjian-detail">
-        <view class="count-title">许昌金黄后摄影</view>
-        <view class="count-title">满99减10</view>
+        <view class="count-title">{{shop_detail.name}}</view>
+        <view class="count-title">{{shop_detail.count}}</view>
         <view class="count-time">2018.06.07--2018-12.31</view>
     </view>
     <view class="lingqu">立即领取</view>
@@ -39,12 +39,12 @@
 <view class="product">
     <view class="caption">所有商品</view>
     <view class="product-list">
-        <view class="product-item" bindtap='handle2'>
-            <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg" ></image>
-            <text>2018全新classic系列</text>
-            <text>¥9980</text>
+        <view class="product-item"  wx:for="{{productlist}}" wx:key="{{index}}">
+            <image src="{{item.img_url}}"  data-pid="{{item.pid}}" bindtap='handle2'></image>
+            <text>{{item.name}}</text>
+            <text>{{item.price}}</text>
         </view>
-        <view class="product-item">
+        <!-- <view class="product-item">
             <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg"></image>
             <text>2018全新classic系列</text>
             <text>¥9980</text>
@@ -53,6 +53,6 @@
             <image src="http://127.0.0.1:3002/img/TAIDI/xianhua.jpg"></image>
             <text>2018全新classic系列</text>
             <text>¥9980</text>
-        </view>
+        </view> -->
     </view>
 </view>

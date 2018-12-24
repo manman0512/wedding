@@ -24,11 +24,12 @@
             <text class="title">{{title}}</text>
             <text class="line"></text>
         </view>
-        <view class="right-list" catchtap='handle1'>
-            <view class="shop-item" wx:for="{{shoplist}}" wx:key="{{index}}">
-                <image src="{{item.img_url}}" class="item-img" data-pid="{{item.pid}}"></image>
+        <view class="right-list" >
+            <view class="shop-item" wx:for="{{shoplist}}" wx:key="{{index}}" >
+                <image src="{{item.img_url}}" class="item-img" data-pid="{{item.pid}}" data-sid="{{item.sid}}" bindtap='handle1'></image>
                 <text class="item-title">{{item.title}}</text>
             </view>
+             <view wx:if="{{msg!=''}}" class="message">{{msg}}</view> 
         </view>
          
         <!-- <view class="shop-item">

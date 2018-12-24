@@ -1,9 +1,10 @@
 // pages/shoplist/shoplist.js
 Page({
     handle1(e){
-        var pid=e.target.dataset.pid;
+        var sid=e.target.dataset.sid;
+        console.log(sid)
         wx.navigateTo({
-            url: '/pages/product/product?pid='+pid,
+            url: '/pages/product/product?sid='+sid,
         })
     },
     loadProduct:function(e){
@@ -19,10 +20,19 @@ Page({
             url:"http://127.0.0.1:3002/product",
             data:{fid},
             success:(res)=>{
-                // console.log(res);
-                this.setData({
-                    shoplist:res.data 
-                })
+                 console.log(res);
+                if(res.data.code==1){
+                    this.setData({
+                        shoplist: res.data.data,
+                        msg:""
+                    })
+                }else{
+                    this.setData({
+                        msg:res.data.msg,
+                        shoplist:[]
+                    })
+                }
+                
             }
         })
     },
@@ -33,6 +43,7 @@ Page({
     btnid:1,
     shoplist:[],
     navlist:[],
+    msg:"",
     title:"婚礼策划"//右侧标题
   },
 
@@ -43,15 +54,21 @@ Page({
     //   console.log(options.fid);
     //   console.log(options);
       var fid=options.fid;
+      console.log(fid);
       var title=options.title;
           wx.request({
               url: "http://127.0.0.1:3002/shoplist",
               success: (res) => {
                 //   console.log(res.data);
                   this.setData({
-                      shoplist: res.data.product,
-                      navlist: res.data.shoplist
+                      navlist: res.data.shoplist,
                   })
+                    if(!fid){
+                        this.setData({
+                            shoplist: res.data.product,
+                        })
+                    }
+                  
               }
           })
         if(fid){
@@ -63,10 +80,21 @@ Page({
                 url: "http://127.0.0.1:3002/product",
                 data: { fid },
                 success: (res) => {
-                    // console.log(res);
-                    this.setData({
-                        shoplist: res.data
-                    })
+                     console.log(res);
+                 // this.setData({
+                    //     shoplist: res.data
+                    // })
+                    if (res.data.code == 1) {
+                        this.setData({
+                            shoplist: res.data.data,
+                            msg: ""
+                        })
+                    } else {
+                        this.setData({
+                            msg: res.data.msg,
+                            shoplist: []
+                        })
+                    }
                 }
             })
         }

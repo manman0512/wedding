@@ -34,6 +34,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    collectProd:0,
+    collectShop:0,
+    count:0
   }
 })

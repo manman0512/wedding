@@ -19,8 +19,9 @@
         <view class='shop-detail arrow' bindtap='handle1'>商家介绍</view>
         <text class='shop-visited'>100浏览</text>
     </view>
-    <view class="shop-collect">
-        <view class="coll">关注</view>
+    <view class="shop-collect" bindtap='handle3'>
+        <view wx:if="{{collectShop}}" class="coll cansel">已关注</view>
+        <view wx:else class="coll">关注</view>
     </view>
 </view>
 <view class='cut-off'></view>
@@ -33,7 +34,10 @@
         <view class="count-title">{{shop_detail.count}}</view>
         <view class="count-time">2018.06.07--2018-12.31</view>
     </view>
-    <view class="lingqu">立即领取</view>
+    <view bindtap="handle4">
+        <view wx:if="{{count}}" class="lingqu cansel">已领取</view>
+        <view wx:else  class="lingqu">立即领取</view>
+    </view>
 </view>
 <view class="cut-off"></view>
 <view class="product">

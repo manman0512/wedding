@@ -35,7 +35,8 @@
         <text>导航</text>
      </view>
      <view class="nav-item" bindtap='navhandle4'>
-        <image src="../static/Heart_24px.png"></image>
+        <image  wx:if="{{collectProd}}" src="../static/Heart_24px.png"></image>
+        <image  wx:else src="../static/love_heart_24px.png"></image>
         <text>收藏</text>
      </view>
      <view class="nav-item">

@@ -1,4 +1,5 @@
 // pages/product/product.js
+const app=getApp();
 Page({
 handle1(){
     wx.navigateTo({
@@ -6,11 +7,80 @@ handle1(){
     })
 },
 handle2(e){
+    
     var pid=e.target.dataset.pid;
     wx.navigateTo({
         url:"/pages/product_details/product_detail?pid="+pid
     })
 },
+handle3(e){
+    var sid = this.data.sid;
+    if(!this.data.collectShop){
+        this.setData({
+            collectShop: true
+        });
+        let num = parseInt(app.globalData.collectShop)+1;
+        app.globalData.collectShop = num;
+        wx.request({
+            url: 'http://127.0.0.1:3002/addcollectShop',
+            data: { uid: 1, sid: sid },
+            success: (res) => {
+                // console.log(res);
+                
+            }
+        })
+
+    }else{
+        this.setData({
+            collectShop: false
+        });
+        let num = parseInt(app.globalData.collectShop)-1;
+        app.globalData.collectShop=num;
+        wx.request({
+            url: 'http://127.0.0.1:3002/delcollectShop',
+            data: { uid: 1, sid: sid },
+            success: (res) => {
+                // console.log(res);
+
+            }
+        })
+    }
+    
+},
+handle4(e){
+    var sid = this.data.sid;
+    if(!this.data.count){
+        this.setData({
+            count: true
+        });
+        let num = parseInt(app.globalData.count)+1;
+        app.globalData.count = num;
+        wx.request({
+            url: 'http://127.0.0.1:3002/addcount',
+            data: { uid: 1, sid: sid },
+            success: (res) => {
+                // console.log(res);
+                
+            }
+        })
+    }else{
+        this.setData({
+            count: false
+        });
+        let num = parseInt(app.globalData.count)-1;
+        app.globalData.count = num;
+        wx.request({
+            url: 'http://127.0.0.1:3002/delcount',
+            data: { uid: 1, sid: sid },
+            success: (res) => {
+                // console.log(res);
+
+            }
+        })
+    }
+    
+},
+
   /**
    * 页面的初始数据
    */
@@ -21,16 +91,47 @@ handle2(e){
       afterColor: "#fff",
     shop_detail:{},
     productlist:[],
-
+    collectShop:false,
+    count:false,
+    sid:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      console.log(options);
-    var sid=options.sid 
-    console.log(sid)
+          var sid = options.sid;
+          this.setData({
+              sid: sid
+          });
+        //   console.log(`我是`+sid);
+          wx.request({
+              url: 'http://127.0.0.1:3002/collectShop',
+              data: { uid:1,sid:sid },
+              success: (res) => {
+                  console.log(res);
+                  if (res.data.code ==1) {
+                      this.setData({
+                          collectShop: true
+                      });
+                  }
+              }
+          })
+          wx.request({
+              url: 'http://127.0.0.1:3002/count',
+              data: { uid: 1, sid: sid },
+              success: (res) => {
+                  console.log(res.data.code);
+                  if (res.data.code ==1) {
+                      this.setData({
+                          count: true
+                      });
+                  }
+              }
+          })
+    // console.log(options);
+    // var sid=options.sid 
+    // console.log(sid)
     wx.request({
         url:'http://127.0.0.1:3002/shopdetail',
         data:{sid},

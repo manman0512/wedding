@@ -1,4 +1,5 @@
 // pages/product_details/product_detail.js
+const app=getApp()
 Page({
     /**进入店铺 */
     handle1(){
@@ -67,7 +68,36 @@ Page({
    },
    /**收藏 */
  navhandle4(){
-
+     var pid = this.data.pid;
+     if(!this.data.collectProd){
+         this.setData({
+             collectProd: true
+         });
+         let num=parseInt(app.globalData.collectProd)+1;
+         app.globalData.collectProd=num
+         
+         wx.request({
+             url: 'http://127.0.0.1:3002/addcollectProd',
+             data: { uid: 1, pid: pid },
+             success: (res) => {
+                 console.log(res);
+             }
+         })
+     }else{
+         this.setData({
+             collectProd: false
+         })
+         let num = parseInt(app.globalData.collectProd)-1;
+         app.globalData.collectProd = num
+         wx.request({
+             url: 'http://127.0.0.1:3002/delcollectProd',
+             data: { uid: 1, pid: pid },
+             success: (res) => {
+                 console.log(res);
+             }
+         })
+     }
+     
  },
   /**
    * 页面的初始数据
@@ -76,25 +106,42 @@ Page({
       product_detail:[],
       latitude: "",
       longitude:"",
-      tel: ""
+      tel: "",
+      pid:0,
+      collectProd:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-        console.log(options.pid);
+        
+        this.setData({
+            pid:options.pid
+        })
         wx.request({
             url: 'http://127.0.0.1:3002/product_detail',
             data: { pid: options.pid},
             success:(res)=>{
-                console.log(res);
+                // console.log(res);
                 this.setData({
                     product_detail:res.data,
                     latitude: res.data[0].latitude,
                     longitude: res.data[0].longitude,
                     tel: res.data[0].tel
                 })
+            }
+        })
+        wx.request({
+            url: 'http://127.0.0.1:3002/collectProd',
+            data: { uid:1,pid: options.pid }, 
+            success:(res)=>{
+                console.log(res);
+                if(res.data.code==1){
+                    this.setData({
+                        collectProd: true
+                    })
+                }
             }
         })
   },

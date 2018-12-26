@@ -65,6 +65,9 @@ page{
     color:#fff;
     font-size:14px;
 }
+.shop-info .shop-collect .coll.cansel,.shop-count .lingqu.cansel{
+     background:#999;
+}
 /*优惠券*/
 .shop-count{
     margin:0 30rpx;
